@@ -7,6 +7,7 @@
 
 //Fonction
 //--------
+
 int strlength(char s[]){
 	
 	int i=0;
