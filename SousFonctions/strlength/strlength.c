@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 // Sous fonction strlength(char[])
 // Retourne la longueur d'une chaine de caractères en INT
 
@@ -15,19 +18,15 @@ int strlength(char s[]){
 	return i;
 }
 
-int main(int argc, char *argv[]) {
-	return 0;
-}
-
-
 //Main test
 
 void main(){
 
   char tab[100];
   printf("\nEntrez un phrase : ");
-  gets(tab];
+  gets(tab);
   
-  printf("\n Nombre de caract%cre : %d, 138, strlength(tab));
+  printf("\nNombre de caract%cre : %d\n\n", 138, strlength(tab));
+  system("pause");
 
 }
