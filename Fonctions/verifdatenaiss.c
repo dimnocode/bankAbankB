@@ -5,8 +5,9 @@
 // Cette fonction retourne la valeur 0 si la chaîne de caractères ne correspond pas à une date de naissance valide
 // et retourne la valeur 1 dans le cas contraire ;
 
-17/12/2011
-0123456789
+//Placement de la date dans un tableau
+//17/12/2011
+//0123456789
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -50,6 +51,11 @@ int verifdatenaiss(char *chaine) {
   if(j > 31 || j < 1 || m > 12 || m < 1 || a < 1900 || a > 2015 ||){
     return 0;
   } else {
+    
+    //Verifier annee bisextile nb de jour par mois etc...
+    //mois avec 30 ou 31
+    //annee bisextile pour autoriser 29janvier;
+    
   
     return 1;
   }
