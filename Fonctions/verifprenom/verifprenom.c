@@ -27,27 +27,27 @@ void lowtoupcase(char *chaine){
 	
 }
 
-//Fonction verifnom
+//Fonction verifprenom
 
-int verifnom(char *nom){
+int verifprenom(char *prenom){
 	
-	int i, lnom;
+	int i, lprenom;
 	//Calcul de la longueur de la chaine
-	lnom = strlength(nom);
+	lprenom = strlength(prenom);
 		
 	//Passage vers majuscule de la chaine (option)
-	lowtoupcase(nom);
+	lowtoupcase(prenom);
 	
 	//Si 1er caractère est un espace alors invalide
-	if((int)nom[0] == 32) {
+	if((int)prenom[0] == 32 || (int)prenom[i] == 45) {
 		return 0;
 	}
 	
 	//Vérification des caractères
-	for(i=0;i<lnom;++i){
+	for(i=0;i<lprenom;++i){
 		
 		
-		if(((int)nom[i] < 65 || (int)nom[i] > 90) && ((int)nom[i] != 32)){
+		if(((int)prenom[i] < 65 || (int)prenom[i] > 90) && (int)prenom[i] != 32 && (int)prenom[i] != 45 ){
 			return 0;
 		}
 	
@@ -64,10 +64,10 @@ void main(){
 	
 	char nom[31];
 	
-	printf("\nEntrez un nom : ");
+	printf("\nEntrez un preznom : ");
 	gets(nom);
 	
-	printf("\n  Valide (0=non, 1=oui) : %d\n", verifnom(nom));
+	printf("\n  Valide (0=non, 1=oui) : %d\n", verifprenom(nom));
 	puts(nom);
 	
 	system("pause");
