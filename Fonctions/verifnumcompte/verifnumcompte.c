@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int verifnumcompte (char* chaine);                         
 int verifnumcompte (char* chaine)
 

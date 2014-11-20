@@ -14,19 +14,6 @@ int strlength(char s[]){
 }
 
 
-
-void lowtoupcase(char *chaine){
-	int i, lchaine;
-	
-	lchaine = strlength(chaine);
-	for(i=0;i<lchaine;++i){
-		if((int)chaine[i] <= 122 && (int)chaine[i] >= 97){
-			chaine[i] -= 32;
-		}
-	}
-	
-}
-
 //Fonction verifprenom
 
 int verifprenom(char *prenom){
@@ -36,7 +23,7 @@ int verifprenom(char *prenom){
 	lprenom = strlength(prenom);
 		
 	//Passage vers majuscule de la chaine (option)
-	lowtoupcase(prenom);
+	//lowtoupcase(prenom);
 	
 	//Si 1er caractère est un espace alors invalide
 	if((int)prenom[0] == 32 || (int)prenom[i] == 45) {

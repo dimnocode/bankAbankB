@@ -15,17 +15,7 @@ int strlength(char s[]){
 
 
 
-void lowtoupcase(char *chaine){
-	int i, lchaine;
-	
-	lchaine = strlength(chaine);
-	for(i=0;i<lchaine;++i){
-		if((int)chaine[i] <= 122 && (int)chaine[i] >= 97){
-			chaine[i] -= 32;
-		}
-	}
-	
-}
+
 
 //Fonction verifnom
 
@@ -36,7 +26,7 @@ int verifnom(char *nom){
 	lnom = strlength(nom);
 		
 	//Passage vers majuscule de la chaine (option)
-	lowtoupcase(nom);
+	//lowtoupcase(nom);
 	
 	//Si 1er caractère est un espace alors invalide
 	if((int)nom[0] == 32) {
