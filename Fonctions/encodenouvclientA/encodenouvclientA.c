@@ -1,4 +1,4 @@
-Enter file contents here/*struct clientA encodenouvclientA(void) struct clientA
+/*struct clientA encodenouvclientA(void) struct clientA
 {
 int numero ;
 char nom [31];
@@ -200,14 +200,14 @@ int compatibildatenaissregnat (char* dateofbirth, char* numregnat)
       
    if (dateofbirth [9] != numregnat [1]) //vérif le dernier chiffre de la date de naissance et deuxieme chiffre du registre nat 
    { 
-   printf("votre date de naissance ne correspond pas au registre national"); 
+   printf("votre date de naissance ne correspond pas au registre national\n"); 
    return 0; 
    } 
    else 
    { 
        if (dateofbirth [8] != numregnat [0])//vérif l'avant dernier chiffre de la date de naissance et le premier chiffre du registre nat 
        { 
-       printf("votre date de naissance ne correspond pas au registre national"); 
+       printf("votre date de naissance ne correspond pas au registre national\n"); 
        return 0; 
        } 
        else 
@@ -215,28 +215,28 @@ int compatibildatenaissregnat (char* dateofbirth, char* numregnat)
             
              if (dateofbirth [4] != numregnat [3])//vérif le dernier chiffre du mois de la date de naissance et le quatrieme chiffre du registre nat 
            { 
-           printf("votre date de naissance ne correspond pas au registre national"); 
+           printf("votre date de naissance ne correspond pas au registre national\n"); 
            return 0; 
            } 
            else 
            { 
                if (dateofbirth [3] != numregnat [2]) //vérif le premier chiffre du mois de la date de naissance et le troisième chiffres du registre nat 
                { 
-               printf("votre date de naissance ne correspond pas au registre national"); 
+               printf("votre date de naissance ne correspond pas au registre national\n"); 
                return 0; 
                } 
                else 
                { 
                      if (dateofbirth [1] != numregnat [5])//vérif le dernier chiffre du jour de la date de naissance et le dernier chiffre du registre nat 
                      { 
-                     printf("votre date de naissance ne correspond pas au registre national"); 
+                     printf("votre date de naissance ne correspond pas au registre national\n"); 
                      return 0; 
                      } 
                      else 
                      { 
                          if (dateofbirth [0] != numregnat [4]) //vérif le deuxième chiffre du jour de la date de naissance et l'avant dernier chiffres du registre nat 
                          { 
-                         printf("votre date de naissance ne correspond pas au registre national"); 
+                         printf("votre date de naissance ne correspond pas au registre national\n"); 
                          return 0; 
                          } 
                          else 
@@ -270,12 +270,11 @@ char num_reg_nat [14] ;
 encodenouvclientA(void)
 {
 
-      do
-      {                 
+      
+                      
                        printf("veuillez entrer le num%cro de client du nouveau client\n",130);
                        scanf("%d",&cA.numero);
-      }                
-      while(cA.numero=='\0'); 
+      
        
        fflush(stdin);
        
@@ -286,7 +285,7 @@ encodenouvclientA(void)
                       
 
        }
-       while(verifnom(cA.nom)!=1 && cA.nom[0]!='\0');
+       while(verifnom(cA.nom)!=1 || cA.nom[0]=='\0');
        
        
        
@@ -296,7 +295,7 @@ encodenouvclientA(void)
                        gets(cA.prenom);
                                      
        }
-       while(verifprenom(cA.prenom)!=1 && cA.prenom[0]!='\0');
+       while(verifprenom(cA.prenom)!=1 || cA.prenom[0]=='\0');
        
         do
        {
@@ -305,7 +304,7 @@ encodenouvclientA(void)
                        gets(cA.num_compte);
                                 
        }
-       while(verifnumcompte (cA.num_compte)!=1 && cA.num_compte[0]!='\0');
+       while(verifnumcompte (cA.num_compte)!=1 || cA.num_compte[0]=='\0');
        
        do
        {
@@ -316,7 +315,7 @@ encodenouvclientA(void)
                                   gets(cA.datenaiss);
                        
                             }
-                            while(verifdatenaiss(cA.datenaiss)!=1 && cA.datenaiss[0]!='\0');
+                            while(verifdatenaiss(cA.datenaiss)!=1 || cA.datenaiss[0]=='\0');
        
       
                             do
@@ -334,6 +333,14 @@ encodenouvclientA(void)
 main()
 {
   encodenouvclientA();
+  printf("%d\n",numero);
+  puts(cA.nom);
+  puts(cA.prenom);
+  puts(cA.num_compte);
+  puts(cA.datenaiss);
+  puts(cA.num_reg_nat);
+  printf("les donnees sont elles correctes?\n");
+  
   system("pause");    
 }
 
