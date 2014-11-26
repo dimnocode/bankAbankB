@@ -18,15 +18,19 @@ char num_reg_nat [14] ;
 };
 
 
-void structclientAcopy(struct clientA source, struct clientA destination){
+void stringcopy() {  //Fonction de Murphy
+}
+
+
+void structclientAcopy(struct clientA source, struct clientA *destination){
 	
-	destination.numero = source.numero;
+	destination->numero = source.numero;
 	
-	stringcopy(source.nom, destination.nom);
-	stringcopy(source.prenom, destination.prenom);
-	stringcopy(source.datenaiss, destination.datenaiss);
-	stringcopy(source.num_compte, destination.num_compte);
-	stringcopy(source.num_reg_nat, destination.num_reg_nat);
+	stringcopy(source.nom, destination->nom);
+	stringcopy(source.prenom, destination->prenom);
+	stringcopy(source.datenaiss, destination->datenaiss);
+	stringcopy(source.num_compte, destination->num_compte);
+	stringcopy(source.num_reg_nat, destination->num_reg_nat);
 	
 	
 }
