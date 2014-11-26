@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define M 
+#define M 100
 
 
 
@@ -38,4 +38,5 @@ void structclientAcopy(struct clientA source, struct clientA *destination){
 
 void main(){
 	
+
 }
