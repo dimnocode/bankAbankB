@@ -6,6 +6,12 @@ int verifNumRegNat(char* chaine)
 {
                 int i=0;
                 int etat = 1;
+                
+                
+                if (chaine[13]!='\0')
+                {
+                return 0;
+                }
                 while (i < 13 )
                 {
                     
