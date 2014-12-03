@@ -48,15 +48,15 @@ int nbchartoint(char *chaine){
 }
 
 //daysinmonth
-int daysinmonth(int d, int y){
+int daysinmonth(int mo, int ye){
 	
-	int monthdays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	int monthdays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; 	//Tableau du nombre de jour pour chaque mois (annees non bisextiles)
 	
-	if((y % 4 == 0 && y % 100 != 0) || y % 400 == 0) { 
-		monthdays[1] = 29;
+	if((ye % 4 == 0 && ye % 100 != 0) || ye % 400 == 0) { 					//Si l'annee est bisextile (divisible par 4 et non par 100 ou divisible par 400)
+		monthdays[1] = 29;													//Alors le nombre de jour de mois de fevrier est de 29
 	}
 	
-	return monthdays[d-1];
+	return monthdays[mo-1];													//Retourne le nombre de jour du mois
 	
 }
 

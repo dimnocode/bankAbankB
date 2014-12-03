@@ -15,7 +15,7 @@ char prenom[31];
 char datenaiss[11] ;
 char num_compte[20];
 char num_reg_nat[14];
-}cA;
+};
 
 
 int strlength(char s[]){
@@ -59,18 +59,19 @@ void structclientAcopy(struct clientA source, struct clientA *destination){
 
 void main(){
 	
-	//struct clientA cA;
+	struct clientA cA = {123, "Rabbit", "Roger", "15/03/1974", "BE00 1111 2222 3333", "740315-123-45"	};
 	struct clientA cbis;
 	char test[10];
 	
 
 	
 	cA.numero = 123;
-	gets(cA.nom);
-	gets(cA.prenom);
-	gets(cA.datenaiss);
-	gets(cA.num_compte);
-	gets(cA.num_reg_nat);
+	cA->nom = "Bunny";
+//	gets(cA.nom);
+//	gets(cA.prenom);
+//	gets(cA.datenaiss);
+//	gets(cA.num_compte);
+//	gets(cA.num_reg_nat);
 
 	
 	
