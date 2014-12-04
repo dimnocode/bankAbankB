@@ -1,4 +1,4 @@
-Enter file contents here//ex 9.23 tri_chaine 
+//Enter file contents here//ex 9.23 tri_chaine 
 #include<stdlib.h>
 #include<stdio.h>
 
@@ -9,8 +9,8 @@ int strcomp2(char tabA[],char tabB[])
     while(tabA[i]==tabB[i])
     {
         i++;
-    }
-    if((int)tabA[i]<(int)tabB[i])
+          
+		  if((int)tabA[i]<(int)tabB[i])
         {
          return 1;                                
         }
@@ -18,6 +18,8 @@ int strcomp2(char tabA[],char tabB[])
         {
             return 0;
         }
+    }
+  
 }
 
 main()
