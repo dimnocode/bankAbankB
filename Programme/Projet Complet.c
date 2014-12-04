@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
+#define M 100
 
 /////////////////////////////////////////Structures/////////////////////////////////////////
 struct clientA 
@@ -484,5 +485,42 @@ int stringcomp(char *chaineA, char* chaineB)   //Fonction qui compare les differ
 
 
 void main(){
+	
+	int nbClientA, i;
+	
+	struct clientA sourceA[M];
+	struct clientA trinumA[M];
+	struct clientA trinomA[M];
+
+//	Rappel acces à un memebre d'une structure d'un tableau	
+//	sourceA[1].numero = 10;
+//	stringcopy("Jean", sourceA[1].prenom);
+//	stringcopy("17/12/1985", sourceA[1].datenaiss);
+//	puts(sourceA[1].prenom);
+//	puts(sourceA[1].datenaiss);
+
+
+	do{																									
+		
+		printf("\nCombien de client(s) de la banque A souhaitez-vous encod%c ? ", 130);
+		scanf("%d", &nbClientA);
+		if(nbClientA>M) {
+			printf("\nErreur ! Le nombre doit etre inf%rieur à %d", M);
+		}
+	} while(nbClientA>M);
+	
+	
+	
+	for(i=0; i<nbClientA; ++i){
+		
+		encodenouvclientA();
+		structclientAcopy(cA, &sourceA[i]);
+	}
+	
+	
+	//puts(sourceA[0].prenom);
+	//puts(sourceA[0].datenaiss);
+	
+	
 	
 }
