@@ -165,21 +165,21 @@ int daysinmonth(int mo, int ye){
    int i, j, m, a, result; 
     
     
-   if(strlength(chaine) == 10 && chaine[2] == '/' && chaine[5] == '/') {					//Si longeur de chaine = 10 ET  
-   																						//si les "/" sont bien placés 
+   if(strlength(chaine) == 10 && chaine[2] == '/' && chaine[5] == '/') {				//Si longeur de chaine = 10 ET  
+   																						//si les "/" sont bien places 
    		char jour[3] = {chaine[0], chaine[1], '\0' }; 
- 		char mois[3] = {chaine[3], chaine[4], '\0' };									//Division de la date en différentes  
- 		char annee[5] = {chaine[6], chaine[7], chaine[8], chaine[9], '\0' };			//variables char[] jours, mois, années 
+ 		char mois[3] = {chaine[3], chaine[4], '\0' };									//Division de la date en differentes  
+ 		char annee[5] = {chaine[6], chaine[7], chaine[8], chaine[9], '\0' };			//variables char[] jours, mois, annees 
    
          j = nbchartoint(jour); 
          m = nbchartoint(mois);															//Conversion en int 
          a = nbchartoint(annee); 
           
           
- 		if(j <= daysinmonth(m, a) && j >= 1){											//Si le jour du mois est valide (année bisextile) 
+ 		if(j <= daysinmonth(m, a) && j >= 1){											//Si le jour du mois est valide (annee bisextile) 
  												 
-     		if(a >= 1905 && a <=1996) {													//Si la date est postérieure au 31 décembre 1904 et  
-     																					//antérieure au 1er janvier 1997 
+     		if(a >= 1905 && a <=1996) {													//Si la date est posterieure au 31 décembre 1904 et  
+     																					//anterieure au 1er janvier 1997 
      		 
  				return 1;																//Alors retourne 1 = valide 
  			}  
@@ -188,9 +188,8 @@ int daysinmonth(int mo, int ye){
  
      } 
     
- 	return 0;																			//Si longeur de chaine != 10 OU  
- 																						//si les "/" ne sont pas bien placés 
- 																						//Retourne 0 = invalide   
+ 	return 0;																			//Dans tous les autres cas, retourne 0
+ 	
  } 
  
  int verifnumcompte (char* chaine)                 /*Fonction de vérification de numéro de compte*/ 
