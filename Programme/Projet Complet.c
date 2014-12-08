@@ -20,10 +20,10 @@ struct clientB
 char nom [31];
 char prenom [31];
 char datenaiss [11] ;
-}cB;
+} cB;
 
 
-
+/////////////////////////////////////////Declaration des fonctions/////////////////////////////////////////
 int strlength(char* s);
 int verifnom(char *nom);
 int verifprenom(char *prenom);
@@ -501,7 +501,8 @@ void main(){
 
 
 	do{																									
-		
+		printf("Interface d'encodage des clients\n");
+		printf("--------------------------------\n");
 		printf("\nCombien de client(s) de la banque A souhaitez-vous encod%c ? ", 130);
 		scanf("%d", &nbClientA);
 		if(nbClientA>M) {
@@ -512,14 +513,41 @@ void main(){
 	
 	
 	for(i=0; i<nbClientA; ++i){
-		
+		system("cls");
+		printf("Interface d'encodage des clients\n");
+		printf("--------------------------------\n");
 		encodenouvclientA();
 		structclientAcopy(cA, &sourceA[i]);
+		structclientAcopy(cA, &trinumA[i]);
+		structclientAcopy(cA, &trinomA[i]);
 	}
 	
-	
-	//puts(sourceA[0].prenom);
-	//puts(sourceA[0].datenaiss);
+	for(i=0; i<nbClientA; ++i)	{
+		
+		printf("\nSource :\n%d\n", sourceA[i].numero);
+		puts(sourceA[i].prenom);
+		puts(sourceA[i].nom);
+		puts(sourceA[i].datenaiss);
+		puts(sourceA[i].num_compte);
+		puts(sourceA[i].num_reg_nat);
+		
+		printf("\nTrinum :\n%d\n", trinumA[i].numero);
+		puts(trinumA[i].prenom);
+		puts(trinumA[i].nom);
+		puts(trinumA[i].datenaiss);
+		puts(trinumA[i].num_compte);
+		puts(trinumA[i].num_reg_nat);
+		
+		printf("\nTrinom :\n%d\n", trinumA[i].numero);
+		puts(trinomA[i].prenom);
+		puts(trinomA[i].nom);
+		puts(trinomA[i].datenaiss);
+		puts(trinomA[i].num_compte);
+		puts(trinomA[i].num_reg_nat);
+		
+		
+	}
+
 	
 	
 	
