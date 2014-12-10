@@ -120,25 +120,26 @@ int stringcomp(char *chaineA, char* chaineB);
  	 
  } 
  
- int nbchartoint(char *chaine){ 
- 	 
- 	int i, res=0, lchaine = strlength(chaine); 
- 	 
- 	 
- 	for(i=0;i<lchaine;++i){ 
- 		 
- 		if((int)chaine[i] >= 48 && (int)chaine[i] <= 57){ 
- 			 
- 			res += ((int)chaine[i] - 48) * (int)pow(10.0, (float)lchaine-i-1); 
- 			 
- 		} 	else {  
- 				return res = -1; 
- 			} 
- 	} 
- 	 
- 	return res; 
- 	 
- } 
+int nbchartoint(char *chaine){
+	
+	int i, res=0, lchaine = strlength(chaine);
+	
+	
+	for(i=0;i<lchaine;++i){
+		
+		if((int)chaine[i] >= 48 && (int)chaine[i] <= 57){
+			
+			res += (int)((int)chaine[i] - 48) * pow(10.0, (float)lchaine-i-1);
+			
+		} 	else { 
+				return res = -1;
+			}
+	}
+	
+	return res;
+	
+}
+
  
  
 //daysinmonth
