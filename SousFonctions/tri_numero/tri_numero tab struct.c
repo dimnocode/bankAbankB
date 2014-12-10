@@ -14,9 +14,9 @@ void tri_numero()
              {
                      if(trinumA.numero[i]>trinumA.numero[i+1])
                      {
-                   temp=trinum[i];             //le temp est une structure temporaire clientA
-                   trinum[i]=trinum[i+1];
-                   trinum[i+1]=temp;
+                   struct clientA temp=trinumA[i];             //le temp est une structure temporaire clientA
+                   trinumA[i]=trinumA[i+1];
+                   trinumA[i+1]= temp;
                    tri=faux;
                    pos=i;
                      }
