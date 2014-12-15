@@ -535,24 +535,31 @@ void tri_numero(struct clientA source[] ,int n)
 
 void recherchedicho(struct clientA trinomA[],int taille,struct clientB *B)//fonction qui recherche un nom dans un tableau trié pour les nom 
 {
-    int i,bg=0,bd=taille-1, trouve=faux;
-    while(trouve==faux && bg <= bd)//tant qu'on n'a pas trouvé la valeur et qu'on n'a pas fouillé tout le tableau
+    int i,bg=0,bd=taille-1, nomtrouve=faux;
+    while(nomtrouve==faux && bg <= bd)//tant qu'on n'a pas trouvé la valeur et qu'on n'a pas fouillé tout le tableau
     {
         i=(bg+bd)/2;
         if(stringcomp(trinomA[i].nom,B->nom) == -1)
         
             bd = i-1;
-         else if(stringcomp(trinomA[i].nom,B->nom)==1)
+         else if(stringcomp(trinomA[i].nom,B->nom)==1) 
             bg=i+1;
               
-          else if((stringcomp(trinomA[i].nom,B->nom) == 0) && (stringcomp(trinomA[i].prenom,B->prenom)==0) && (stringcomp(trinomA[i].prenom,B->datenaiss)==0))     
+          else     
                   
                   {
-                          trouve = vrai;
-                          printf("%d",trouve);                                           
+                         nomtrouve = vrai;
+                         					
+						                                            
                    }       
-              
-     }       
+            
+     }    
+	 
+	 if((nomtrouve == vrai) && (stringcomp(trinomA[i].prenom,B->prenom)==0) && (stringcomp(trinomA[i].datenaiss,B->datenaiss)==0)) { 
+	 
+	 printf("%d",nomtrouve); 
+	 
+	}
                   
                                                              
  }             
@@ -653,7 +660,7 @@ stringcopy("850814-103-51", trinomA[2].num_reg_nat);
 
 stringcopy("ANDERSON", sourceB[0].nom);
 stringcopy("PAMELA", sourceB[0].prenom);
-stringcopy("15/10/1991", sourceB[0].datenaiss);
+stringcopy("15/10/1990", sourceB[0].datenaiss);
 
 
 
