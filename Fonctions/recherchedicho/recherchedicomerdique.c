@@ -545,7 +545,7 @@ void recherchedicho(struct clientA trinomA[],int taille,struct clientB *B)//fonc
          else if(stringcomp(trinomA[i].nom,B->nom)==1)
             bg=i+1;
               
-          else if((stringcomp(trinomA[i].prenom,B->prenom)==0) && (stringcomp(trinomA[i].prenom,B->datenaiss)==0))     
+          else if((stringcomp(trinomA[i].nom,B->nom) == 0) && (stringcomp(trinomA[i].prenom,B->prenom)==0) && (stringcomp(trinomA[i].prenom,B->datenaiss)==0))     
                   
                   {
                           trouve = vrai;
