@@ -84,12 +84,12 @@ int verifnom(char *nom){
 	//Passage vers majuscule de la chaine (option)
 	//lowtoupcase(nom);
 
-	//Si 1er caract�re est un espace alors invalide
+	//Si 1er caractère est un espace alors invalide
 	if((int)nom[0] == 32) {
 		return 0;
 	}
 
-	//V�rification des caract�res
+	//Vérification des caractères
 	for(i=0;i<lnom;++i){
 
 
@@ -112,12 +112,12 @@ int verifprenom(char *prenom){
 	//Passage vers majuscule de la chaine (option)
 	//lowtoupcase(prenom);
 
-	//Si 1er caract�re est un espace alors invalide
+	//Si 1er caractère est un espace alors invalide
 	if((int)prenom[0] == 32 || (int)prenom[i] == 45) {
 		return 0;
 	}
 
-	//V�rification des caract�res
+	//Vérification des caractères
 	for(i=0;i<lprenom;++i){
 
 
@@ -190,7 +190,7 @@ int verifdatenaiss(char *chaine) {
 
 		if(j <= daysinmonth(m, a) && j >= 1){											//Si le jour du mois est valide (annee bisextile)
 
-			if(a >= 1905 && a <=1996) {													//Si la date est posterieure au 31 d�cembre 1904 et
+			if(a >= 1905 && a <=1996) {													//Si la date est posterieure au 31 décembre 1904 et
 				//anterieure au 1er janvier 1997
 
 				return 1;																//Alors retourne 1 = valide
@@ -204,7 +204,7 @@ int verifdatenaiss(char *chaine) {
 
 }
 
-int verifnumcompte (char* chaine)                 /*Fonction de v�rification de num�ro de compte*/
+int verifnumcompte (char* chaine)                 /*Fonction de vérification de numéro de compte*/
 
 
 {
@@ -242,14 +242,14 @@ int verifnumcompte (char* chaine)                 /*Fonction de v�rification de 
 int compatibildatenaissregnat (char* dateofbirth, char* numregnat)  
 {
 
-	if (dateofbirth [9] != numregnat [1]) //v�rif le dernier chiffre de la date de naissance et deuxieme chiffre du registre nat
+	if (dateofbirth [9] != numregnat [1]) //vérif le dernier chiffre de la date de naissance et deuxieme chiffre du registre nat
 	{
 		printf("votre date de naissance ne correspond pas au registre national\n");
 		return 0;
 	}
 	else
 	{
-		if (dateofbirth [8] != numregnat [0])//v�rif l'avant dernier chiffre de la date de naissance et le premier chiffre du registre nat
+		if (dateofbirth [8] != numregnat [0])//vérif l'avant dernier chiffre de la date de naissance et le premier chiffre du registre nat
 		{
 			printf("votre date de naissance ne correspond pas au registre national\n");
 			return 0;
@@ -257,28 +257,28 @@ int compatibildatenaissregnat (char* dateofbirth, char* numregnat)
 		else
 		{
 
-			if (dateofbirth [4] != numregnat [3])//v�rif le dernier chiffre du mois de la date de naissance et le quatrieme chiffre du registre nat
+			if (dateofbirth [4] != numregnat [3])//vérif le dernier chiffre du mois de la date de naissance et le quatrieme chiffre du registre nat
 			{
 				printf("votre date de naissance ne correspond pas au registre national\n");
 				return 0;
 			}
 			else
 			{
-				if (dateofbirth [3] != numregnat [2]) //v�rif le premier chiffre du mois de la date de naissance et le troisi�me chiffres du registre nat
+				if (dateofbirth [3] != numregnat [2]) //vérif le premier chiffre du mois de la date de naissance et le troisième chiffres du registre nat
 				{
 					printf("votre date de naissance ne correspond pas au registre national\n");
 					return 0;
 				}
 				else
 				{
-					if (dateofbirth [1] != numregnat [5])//v�rif le dernier chiffre du jour de la date de naissance et le dernier chiffre du registre nat
+					if (dateofbirth [1] != numregnat [5])//vérif le dernier chiffre du jour de la date de naissance et le dernier chiffre du registre nat
 					{
 						printf("votre date de naissance ne correspond pas au registre national\n");
 						return 0;
 					}
 					else
 					{
-						if (dateofbirth [0] != numregnat [4]) //v�rif le deuxi�me chiffre du jour de la date de naissance et l'avant dernier chiffres du registre nat
+						if (dateofbirth [0] != numregnat [4]) //vérif le deuxième chiffre du jour de la date de naissance et l'avant dernier chiffres du registre nat
 						{
 							printf("votre date de naissance ne correspond pas au registre national\n");
 							return 0;
@@ -303,34 +303,34 @@ int compatibildatenaissregnat (char* dateofbirth, char* numregnat)
 
 int verifNumRegNat(char* chaine)
 {
-	int i=0;
-	int etat = 1;
+	int i=0;     /*déclaration et définition du compteur i à 0*/
+	int etat = 1; /*déclaration et définition d'une variable etat à 1*/
 
 
-	if (chaine[13]!='\0')
+	if (chaine[13]!='\0')     /*Vérifie que le 13è caractère est bien un caractère de fin de chaine*/
 	{
 		return 0;
 	}
-	while (i < 13 )
+	while (i < 13 )     /*Pendant que le compteur est plus petit que 13*/
 	{
 
-		if(i != 6 && i != 10)
+		if(i != 6 && i != 10)    /*Pour les caractères qui ne sont pas en position 6 et 10 */
 		{
-			if(chaine[i]<'0'||chaine[i]>'9')
+			if(chaine[i]<'0'||chaine[i]>'9')   /*=> vérifie que les caractères sont des nombres*/
 			{
 				etat = 0;
 			}
 		}
-		else
+		else      /*Pour les caractères en position 6 et 10*/
 		{
-			if (chaine[i]!='-')
+			if (chaine[i]!='-')     /*vérifie qu'il s'agit d'un tiret*/
 			{
 				etat = 0;
 			}
 		}
-		i=i+1;
+		i=i+1;    /*incrémentation du compteur*/
 	}
-	return etat;
+	return etat;     /*Affiche la variable etat*/
 }
 
 
@@ -685,7 +685,7 @@ void readfile(char *nom,struct clientA sourceA[],struct clientB sourceB[])
 }
 
 
-void recherchedicho(struct clientA trinA[],int nbCa,struct clientB B[], int nbCb, struct clientB Communs[], int *nbCcom)//fonction qui recherche un nom dans un tableau trié pour les nom 
+void recherchedicho(struct clientA trinA[],int nbCa,struct clientB B[], int nbCb, struct clientB Communs[], int *nbCcom)//fonction qui recherche un nom dans un tableau triÃ© pour les nom 
 {
 
 	int j;
@@ -694,7 +694,7 @@ void recherchedicho(struct clientA trinA[],int nbCa,struct clientB B[], int nbCb
 
 		int i,bg=0,bd=nbCa-1, nomtrouve=faux;
 
-		while(nomtrouve==faux && bg <= bd)//tant qu'on n'a pas trouvé la valeur et qu'on n'a pas fouillé tout le tableau
+		while(nomtrouve==faux && bg <= bd)//tant qu'on n'a pas trouvÃ© la valeur et qu'on n'a pas fouillÃ© tout le tableau
 		{
 			i=(bg+bd)/2;
 			if(stringcomp(trinA[i].nom,B[j].nom) == -1)
@@ -822,9 +822,9 @@ main(){
 	//	}
 
 
-	do
+	do     /*Affichage du menu principal*/
 	{
-		printf ("======\n");
+		printf ("======\n");     
 		printf (" Menu \n");
 		printf ("======\n\n");
 		printf ("1. ENCODER\n");
@@ -832,7 +832,7 @@ main(){
 		printf ("3. LIRE\n");
 		printf("\n Entrer un nombre compris entre 1 et 3 \n");
 		scanf("%d", &menu);
-
+		//Les lignes ci-dessus composent le menu
 
 		switch(menu)
 		{
@@ -944,7 +944,7 @@ main(){
 				break;
 				}
 				break;
-				default : printf("Veuillez encoder uniquement un num�ro valide");
+				default : printf("Veuillez encoder uniquement un numéro valide");
 				break;
 
 
@@ -956,7 +956,7 @@ main(){
 		printf ("Voulez-vous retourner au menu principal ? \n Entrez 'y' pour oui et 'n' pour non\n");
 		scanf("%c",&g);
 	}
-	while(g=='y'||g=='Y');
+	while(g=='y'||g=='Y');     /*Tant que l'utilisateur choisi yes pour retourner au menu principal*/
 
 	system("pause");
 
