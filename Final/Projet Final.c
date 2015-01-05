@@ -66,68 +66,62 @@ int strlength(char* s)
 { 
 	int i=0;
 
-	while(s[i] != '\0')
+	while(s[i] != '\0') 	//Tant que le caractere de fin de chaine n'est pas rencontre
 	{
-		++i;
+		++i;		//On incremente de 1	
 	}
 
-	return i;
+	return i;		//Retourne la longueur de la chaine
 }
 //Fonction verifnom
 
 int verifnom(char *nom){
 
 	int i, lnom;
-	//Calcul de la longueur de la chaine
-	lnom = strlength(nom);
 
-	//Passage vers majuscule de la chaine (option)
-	//lowtoupcase(nom);
+	lnom = strlength(nom); 		//Calcul de la longueur de la chaine
 
-	//Si 1er caractÃ¨re est un espace alors invalide
-	if((int)nom[0] == 32) {
+
+	if((int)nom[0] == 32) { 	//Si 1er caractere est un espace alors retourne 0
 		return 0;
 	}
 
-	//VÃ©rification des caractÃ¨res
-	for(i=0;i<lnom;++i){
+	
+	for(i=0;i<lnom;++i){  		//Verification des caracteres
 
 
-		if(((int)nom[i] < 65 || (int)nom[i] > 90) && ((int)nom[i] != 32)){
+		if(((int)nom[i] < 65 || (int)nom[i] > 90) && ((int)nom[i] != 32)){	//Si caractere invalide (Autre que majuscule ou espace), retourne 0
 			return 0;
 		}
 
 
 	}
-	return 1;
+	return 1;	//Dans tous les autres cas retourne 1
 
 }
 
 int verifprenom(char *prenom){
 
 	int i, lprenom;
-	//Calcul de la longueur de la chaine
-	lprenom = strlength(prenom);
 
-	//Passage vers majuscule de la chaine (option)
-	//lowtoupcase(prenom);
+	lprenom = strlength(prenom);	//Calcul de la longueur de la chaine
 
-	//Si 1er caractÃ¨re est un espace alors invalide
-	if((int)prenom[0] == 32 || (int)prenom[i] == 45) {
+
+	if((int)prenom[0] == 32 || (int)prenom[i] == 45) { 	//Si 1er caractere est un espace alors retoune 0
 		return 0;
 	}
 
-	//VÃ©rification des caractÃ¨res
-	for(i=0;i<lprenom;++i){
+
+	for(i=0;i<lprenom;++i){ 	//Verification des caracteres
 
 
-		if(((int)prenom[i] < 65 || (int)prenom[i] > 90) && (int)prenom[i] != 32 && (int)prenom[i] != 45 ){
+		if(((int)prenom[i] < 65 || (int)prenom[i] > 90) && (int)prenom[i] != 32 && (int)prenom[i] != 45 ){	//Si caractere invalide (Autre que majuscule, espace, tiret), retourne 0
 			return 0;
 		}
 
 
 	}
-	return 1;
+	return 1;	//Dans tous les autres cas retourne 1
 
 }
 
@@ -136,18 +130,18 @@ int nbchartoint(char *chaine){
 	int i, res=0, lchaine = strlength(chaine);
 
 
-	for(i=0;i<lchaine;++i){
+	for(i=0;i<lchaine;++i){ //Pour la longueur de la chaine passee en argument
 
-		if((int)chaine[i] >= 48 && (int)chaine[i] <= 57){
+		if((int)chaine[i] >= 48 && (int)chaine[i] <= 57){	//Si les char represente des chiffres
 
-			res += ((int)chaine[i] - 48) * (int)pow(10.0, (float)lchaine-i-1);
+			res += ((int)chaine[i] - 48) * (int)pow(10.0, (float)lchaine-i-1); //Valeur numerique du char * 10 exposant sa position dans la chaine
 
-		} 	else {
-			return res = -1;
+		} 	else {	//Si pas un nombre
+			return res = -1; //Res = -1
 		}
 	}
 
-	return res;
+	return res; 	//Retourne res
 
 }
 
