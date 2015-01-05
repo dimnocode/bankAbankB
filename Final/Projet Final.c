@@ -84,12 +84,12 @@ int verifnom(char *nom){
 	//Passage vers majuscule de la chaine (option)
 	//lowtoupcase(nom);
 
-	//Si 1er caractère est un espace alors invalide
+	//Si 1er caractÃ¨re est un espace alors invalide
 	if((int)nom[0] == 32) {
 		return 0;
 	}
 
-	//Vérification des caractères
+	//VÃ©rification des caractÃ¨res
 	for(i=0;i<lnom;++i){
 
 
@@ -112,12 +112,12 @@ int verifprenom(char *prenom){
 	//Passage vers majuscule de la chaine (option)
 	//lowtoupcase(prenom);
 
-	//Si 1er caractère est un espace alors invalide
+	//Si 1er caractÃ¨re est un espace alors invalide
 	if((int)prenom[0] == 32 || (int)prenom[i] == 45) {
 		return 0;
 	}
 
-	//Vérification des caractères
+	//VÃ©rification des caractÃ¨res
 	for(i=0;i<lprenom;++i){
 
 
@@ -190,7 +190,7 @@ int verifdatenaiss(char *chaine) {
 
 		if(j <= daysinmonth(m, a) && j >= 1){											//Si le jour du mois est valide (annee bisextile)
 
-			if(a >= 1905 && a <=1996) {													//Si la date est posterieure au 31 décembre 1904 et
+			if(a >= 1905 && a <=1996) {													//Si la date est posterieure au 31 dÃ©cembre 1904 et
 				//anterieure au 1er janvier 1997
 
 				return 1;																//Alors retourne 1 = valide
@@ -204,7 +204,7 @@ int verifdatenaiss(char *chaine) {
 
 }
 
-int verifnumcompte (char* chaine)                 /*Fonction de vérification de numéro de compte*/
+int verifnumcompte (char* chaine)                 /*Fonction de vÃ©rification de numÃ©ro de compte*/
 
 
 {
@@ -239,17 +239,18 @@ int verifnumcompte (char* chaine)                 /*Fonction de vérification de
 	return 1;
 }
 
-int compatibildatenaissregnat (char* dateofbirth, char* numregnat)  
-{
+int compatibildatenaissregnat (char* dateofbirth, char* numregnat)  ~//fonction vérifiant la compatibilité entre date de naissance et registre national
+{																	// pour y arriver cette fonction vas comparer chaque carracté des deux entité pour vérifier 
+																	//qu'il soit identique. dans cette fonction deux paramétre y sont envoyés, la date de naiss et le registre nat via pointeur
 
-	if (dateofbirth [9] != numregnat [1]) //vérif le dernier chiffre de la date de naissance et deuxieme chiffre du registre nat
+	if (dateofbirth [9] != numregnat [1]) //vÃ©rif le dernier chiffre de la date de naissance et deuxieme chiffre du registre nat
 	{
 		printf("votre date de naissance ne correspond pas au registre national\n");
 		return 0;
 	}
 	else
 	{
-		if (dateofbirth [8] != numregnat [0])//vérif l'avant dernier chiffre de la date de naissance et le premier chiffre du registre nat
+		if (dateofbirth [8] != numregnat [0])//vÃ©rif l'avant dernier chiffre de la date de naissance et le premier chiffre du registre nat
 		{
 			printf("votre date de naissance ne correspond pas au registre national\n");
 			return 0;
@@ -257,28 +258,28 @@ int compatibildatenaissregnat (char* dateofbirth, char* numregnat)
 		else
 		{
 
-			if (dateofbirth [4] != numregnat [3])//vérif le dernier chiffre du mois de la date de naissance et le quatrieme chiffre du registre nat
+			if (dateofbirth [4] != numregnat [3])//vÃ©rif le dernier chiffre du mois de la date de naissance et le quatrieme chiffre du registre nat
 			{
 				printf("votre date de naissance ne correspond pas au registre national\n");
 				return 0;
 			}
 			else
 			{
-				if (dateofbirth [3] != numregnat [2]) //vérif le premier chiffre du mois de la date de naissance et le troisième chiffres du registre nat
+				if (dateofbirth [3] != numregnat [2]) //vÃ©rif le premier chiffre du mois de la date de naissance et le troisiÃ¨me chiffres du registre nat
 				{
 					printf("votre date de naissance ne correspond pas au registre national\n");
 					return 0;
 				}
 				else
 				{
-					if (dateofbirth [1] != numregnat [5])//vérif le dernier chiffre du jour de la date de naissance et le dernier chiffre du registre nat
+					if (dateofbirth [1] != numregnat [5])//vÃ©rif le dernier chiffre du jour de la date de naissance et le dernier chiffre du registre nat
 					{
 						printf("votre date de naissance ne correspond pas au registre national\n");
 						return 0;
 					}
 					else
 					{
-						if (dateofbirth [0] != numregnat [4]) //vérif le deuxième chiffre du jour de la date de naissance et l'avant dernier chiffres du registre nat
+						if (dateofbirth [0] != numregnat [4]) //vÃ©rif le deuxiÃ¨me chiffre du jour de la date de naissance et l'avant dernier chiffres du registre nat
 						{
 							printf("votre date de naissance ne correspond pas au registre national\n");
 							return 0;
@@ -303,32 +304,32 @@ int compatibildatenaissregnat (char* dateofbirth, char* numregnat)
 
 int verifNumRegNat(char* chaine)
 {
-	int i=0;     /*déclaration et définition du compteur i à 0*/
-	int etat = 1; /*déclaration et définition d'une variable etat à 1*/
+	int i=0;     /*dÃ©claration et dÃ©finition du compteur i Ã  0*/
+	int etat = 1; /*dÃ©claration et dÃ©finition d'une variable etat Ã  1*/
 
 
-	if (chaine[13]!='\0')     /*Vérifie que le 13è caractère est bien un caractère de fin de chaine*/
+	if (chaine[13]!='\0')     /*VÃ©rifie que le 13Ã¨ caractÃ¨re est bien un caractÃ¨re de fin de chaine*/
 	{
 		return 0;
 	}
 	while (i < 13 )     /*Pendant que le compteur est plus petit que 13*/
 	{
 
-		if(i != 6 && i != 10)    /*Pour les caractères qui ne sont pas en position 6 et 10 */
+		if(i != 6 && i != 10)    /*Pour les caractÃ¨res qui ne sont pas en position 6 et 10 */
 		{
-			if(chaine[i]<'0'||chaine[i]>'9')   /*=> vérifie que les caractères sont des nombres*/
+			if(chaine[i]<'0'||chaine[i]>'9')   /*=> vÃ©rifie que les caractÃ¨res sont des nombres*/
 			{
 				etat = 0;
 			}
 		}
-		else      /*Pour les caractères en position 6 et 10*/
+		else      /*Pour les caractÃ¨res en position 6 et 10*/
 		{
-			if (chaine[i]!='-')     /*vérifie qu'il s'agit d'un tiret*/
+			if (chaine[i]!='-')     /*vÃ©rifie qu'il s'agit d'un tiret*/
 			{
 				etat = 0;
 			}
 		}
-		i=i+1;    /*incrémentation du compteur*/
+		i=i+1;    /*incrÃ©mentation du compteur*/
 	}
 	return etat;     /*Affiche la variable etat*/
 }
@@ -512,20 +513,20 @@ int stringcomp(char *chaineA, char* chaineB)   //Fonction qui compare les differ
 	}
 }
 
-void trinom(struct clientA source[],int size)   //fonction qui tri les chaine de caract
+void trinom(struct clientA source[],int size)   //fonction qui tri les chaine de caract envois comme paramétre le tableau à trier et la taille de celui-ci
 {
 	int temp=0;
-	int tri=faux;
+	int tri=faux; // on initialise que tri = faux pour pouvoir rentrer dans la boucle
 	int i=0;
-	while (tri==faux)
+	while (tri==faux) //tant que le tri n'est pas réalisé on rentre dans la boucle
 
 	{
-		tri=vrai;
+		tri=vrai;// on inialise tri a vrai car si infiné on ne rentre pas dans la condition, c'est que le tri est réaliser et on sort de la boucle while
 		for(i=0;i<size-1;i++)
 		{
-			if (stringcomp(source[i].nom, source[i+1].nom)==-1)
-			{
-				struct clientA temp = source[i];
+			if (stringcomp(source[i].nom, source[i+1].nom)==-1) // dans la condition on comparer deux chaines de caractéres si c'est égale à - le tri n'est pas fait 
+			{													// et on inverse les cases du tableau de structure pour mettre le plus petit par ordre alphabétique à gauche
+				struct clientA temp = source[i];				//création d'un tableau de structure temporaire pour placer les élément à trier!!! 
 				source[i] = source [i+1];
 				source [i+1] = temp;
 				tri = faux;
@@ -536,22 +537,22 @@ void trinom(struct clientA source[],int size)   //fonction qui tri les chaine de
 
 
 
-void tri_numero(struct clientA source[] ,int n)
+void tri_numero(struct clientA source[] ,int n) //envois à la fonction le tableau de struc clientA à trier et le nombre de case à trier
 {
-	int i=0,temp,tri=faux,pos=n-1;
+	int i=0,temp,tri=faux,pos=n-1; // initialisation des différentes variables 
 
-	while(tri==faux)
+	while(tri==faux) //tant que le tri n'est pas réalisé on rentre dans la boucle
 	{
-		tri=vrai;
-		for(i=0;i<pos;i++)
+		tri=vrai; // on inialise tri a vrai car si infiné on ne rentre pas dans la condition, c'est que le tri est réaliser et on sort de la boucle while
+		for(i=0;i<pos;i++)// boucle permetant de circuler dans le tableau
 		{
-			if(source[i].numero>source[i+1].numero)
+			if(source[i].numero>source[i+1].numero)//condition pour comparer deux case du tableau pour voir si c'est trier ou non 
 			{
-				struct clientA temp=source[i];             //le temp est une structure temporaire clientA
-				source[i]=source[i+1];
+				struct clientA temp=source[i];             //le temp est une structure temporaire clientA, dans les cases ci-dessous nous inverson les case du tableau 
+				source[i]=source[i+1];						//pour envoyer le plus petit numéros à la gauche du tableau
 				source[i+1]= temp;
-				tri=faux;
-				pos=i;
+				tri=faux;								//montre que le tri a eu lieux donc que le tableau n'était pas encore trié ce qui permet de rentrer dans la boucle
+				pos=i;									//on incrémente la position pour ne plus devoir checker tout le tableau 
 			}
 		}
 	}
@@ -685,38 +686,38 @@ void readfile(char *nom,struct clientA sourceA[],struct clientB sourceB[])
 }
 
 
-void recherchedicho(struct clientA trinA[],int nbCa,struct clientB B[], int nbCb, struct clientB Communs[], int *nbCcom)//fonction qui recherche un nom dans un tableau triÃ© pour les nom 
-{
+void recherchedicho(struct clientA trinA[],int nbCa,struct clientB B[], int nbCb, struct clientB Communs[], int *nbCcom)//fonction qui recherche un nom dans un tableau triÃƒÂ© pour les nom 
+{ //envois des parametres tableau clientA trié (trinomA), le nbr de client A, le tableau client B, le nbr client B, création du tableau clientB/A commun et nbr en commun
 
 	int j;
 
-	for(j=0;j<nbCb;++j){
+	for(j=0;j<nbCb;++j){ //permet la circulation dans le tableau
 
-		int i,bg=0,bd=nbCa-1, nomtrouve=faux;
+		int i,bg=0,bd=nbCa-1, nomtrouve=faux; //mise en place des variables, bg : borne de gauche du tableau (le premier par ordre alphab, bd borne droite 
 
-		while(nomtrouve==faux && bg <= bd)//tant qu'on n'a pas trouvÃ© la valeur et qu'on n'a pas fouillÃ© tout le tableau
+		while(nomtrouve==faux && bg <= bd)//tant qu'on n'a pas trouvÃƒÂ© la valeur et qu'on n'a pas fouillÃƒÂ© tout le tableau
 		{
-			i=(bg+bd)/2;
-			if(stringcomp(trinA[i].nom,B[j].nom) == -1)
+			i=(bg+bd)/2; //permet de diviser le tableau en deux et ne contrôler q'un demi tableau à la foix
+			if(stringcomp(trinA[i].nom,B[j].nom) == -1) // regarde si le nom du tableau B se trouve dans le tableau A trié si renvois -1 il ne se trouve pas du coté droite du tab
 
-				bd = i-1;
-			else if(stringcomp(trinA[i].nom,B[j].nom) == 1)
-				bg = i+1;
+				bd = i-1; // on diminue la borne de doite pour diminuer le tableau 
+			else if(stringcomp(trinA[i].nom,B[j].nom) == 1)//si la comparaison renvois 1, il ne se trouve pas dans la partie gauche, donc on diminuer le tableau via la gauche
+				bg = i+1; // on augmente la borne de gauche pour diminuer le tableau
 
 			else
 
 			{
-				nomtrouve = vrai;
+				nomtrouve = vrai; // si la comparaison ne renvois pas -1 ou 1 c'est que le nom est trouvé 
 
 
 			}
 
 		}
 
-		if(nomtrouve == vrai && stringcomp(trinA[i].prenom,B[j].prenom) == 0 && stringcomp(trinA[i].datenaiss,B[j].datenaiss) == 0) {
-
-			*nbCcom += 1;
-			structclientBcopy(B[j], &Communs[*nbCcom-1]);
+		if(nomtrouve == vrai && stringcomp(trinA[i].prenom,B[j].prenom) == 0 && stringcomp(trinA[i].datenaiss,B[j].datenaiss) == 0) { //une fois le nom trouvé 
+				//on compare les prénom et les dates de naissance si sa renvois 0 c'est que le client est commun au deux banque
+			*nbCcom += 1; //incrémente le nombre de client commun trouvé
+			structclientBcopy(B[j], &Communs[*nbCcom-1]); //on copie les informations du client commun dans le tableau de client commun
 
 		}
 
@@ -944,7 +945,7 @@ main(){
 				break;
 				}
 				break;
-				default : printf("Veuillez encoder uniquement un numéro valide");
+				default : printf("Veuillez encoder uniquement un numÃ©ro valide");
 				break;
 
 
@@ -961,7 +962,6 @@ main(){
 	system("pause");
 
 }
-
 
 
 
