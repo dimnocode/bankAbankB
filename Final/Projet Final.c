@@ -207,30 +207,31 @@ int verifnumcompte (char* chaine)                 /*Fonction de vÃ©rification 
 
 
 	for(i=0;i<20;i++)
-	{                if(chaine[19]!='\0')
-	{
-		printf("Ce num%cro de compte est incorrect\n",130);
-		return 0;
-	}
-	if((chaine[0]!='B'||chaine[1]!='E'))
-	{
-		printf("Ce num%cro de compte est incorrect\n",130);
-		return 0;
-	}
-	if ((i==2||i==3||i==5||i==6||i==7||i==8||i==10||i==11||i==12||i==13||i==15||i==16||i==17||i==18)&&(chaine[i]<48||chaine[i]>57))
-	{
-		printf("Ce num%cro de compte est incorrect\n",130);
-		return 0;
+	{                
+		if(chaine[19]!='\0')       //Verifie si le dernier caracthere du numéro de compte est bien celui de fin de chaine de sorte a ce qu'il y ai une erreur si le format est un autre que BE00 0000 0000 0000. 
+		{
+			printf("Ce num%cro de compte est incorrect\n",130);
+			return 0;
+		}
+		if((chaine[0]!='B'||chaine[1]!='E'))      //Verifie si les 2 premieres ccase du tableau sont bien B et E. Si différent de BE => Erreur
+		{
+			printf("Ce num%cro de compte est incorrect\n",130);
+			return 0;
+		}
+		if ((i==2||i==3||i==5||i==6||i==7||i==8||i==10||i==11||i==12||i==13||i==15||i==16||i==17||i==18)&&(chaine[i]<48||chaine[i]>57)) //Verifie que tout les index ci a gauche sont bien des chiffres (code ascii de 0 à 9). Si lettre ou autre symbole => Erreur
+		{
+			printf("Ce num%cro de compte est incorrect\n",130);
+			return 0;
+
+		}
+		if((i==4||i==9||i==14)&&(chaine[i]!=' '))  // Verifie si les cases du tableau séparent toute celle ci dessus sont bien des espaces. Si différent d'un espace => Erreur
+		{
+			printf("Ce num%cro de compte est incorrect\n",130);
+			return 0;
+		}
 
 	}
-	if((i==4||i==9||i==14)&&(chaine[i]!=' '))
-	{
-		printf("Ce num%cro de compte est incorrect\n",130);
-		return 0;
-	}
-
-	}
-	return 1;
+	return 1;   // Retourne 1, une valeur qui stipule que toute les autre condition ci dessus sont respectée. ==> Numéro de compte Correcte (BE12 3456 7890 1234)
 }
 
 int compatibildatenaissregnat (char* dateofbirth, char* numregnat)  ~//fonction vérifiant la compatibilité entre date de naissance et registre national
@@ -298,8 +299,8 @@ int compatibildatenaissregnat (char* dateofbirth, char* numregnat)  ~//fonction 
 
 int verifNumRegNat(char* chaine)
 {
-	int i=0;     /*dÃ©claration et dÃ©finition du compteur i Ã  0*/
-	int etat = 1; /*dÃ©claration et dÃ©finition d'une variable etat Ã  1*/
+	int i=0;     /*dÃ©claration et dÃ©finition du compteur i Ã  0*/
+	int etat = 1; /*dÃ©claration et dÃ©finition d'une variable etat Ã  1*/
 
 
 	if (chaine[13]!='\0')     /*VÃ©rifie que le 13Ã¨ caractÃ¨re est bien un caractÃ¨re de fin de chaine*/
@@ -956,7 +957,4 @@ main(){
 	system("pause");
 
 }
-
-
-
 
